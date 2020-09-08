@@ -69,7 +69,7 @@ function Apagar2() {
   function onMessageArrived(message) {
 	 texto=(message.payloadString);
      text=(message.payloadString).split(" ")[0];
-	 console.log(text)
+	 console.log(texto)
 	 if (text=="Luz1"){
 	  document.getElementById("estado1").innerHTML = texto;
 	 }

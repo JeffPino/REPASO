@@ -1,22 +1,22 @@
 //https://www.eclipse.org/paho/clients/js/
 
 function Encende1() {
-	message = new Paho.MQTT.Message("L1"+" "+ "on");
+	message = new Paho.MQTT.Message("L1O");
     message.destinationName = "jeffersson.pino@gmail.com/RASP";
     client.send(message);
 }
 function Apaga1() {
-	message = new Paho.MQTT.Message("L1"+" "+"off");
+	message = new Paho.MQTT.Message("L1N");
     message.destinationName = "jeffersson.pino@gmail.com/RASP";
     client.send(message);
 }
 function Encende2() {
-	message = new Paho.MQTT.Message("L1"+" "+"on");
+	message = new Paho.MQTT.Message("L2O");
     message.destinationName = "jeffersson.pino@gmail.com/RASP";
     client.send(message);
 }
 function Apaga2() {
-	message = new Paho.MQTT.Message("L2"+" "+"off");
+	message = new Paho.MQTT.Message("L2N");
     message.destinationName = "jeffersson.pino@gmail.com/RASP";
     client.send(message);
 }

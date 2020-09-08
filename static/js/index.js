@@ -14,7 +14,6 @@ function Resta(){
 	x="5000";
 	y="3000";
 	message = new Paho.MQTT.Message("R"+" "+ x +" "+ y );
-	console.log(message);
     message.destinationName = "jeffersson.pino@gmail.com/RASP";
     client.send(message);
 	
@@ -65,6 +64,8 @@ function Resta(){
 
   // called when a message arrives
   function onMessageArrived(message) {
-    console.log("onMessageArrived:"+message.payloadString);
+     text=(message.payloadString);
+	 console.log(text)
+	 document.getElementById("respuesta").innerHTML = text;
   }
   

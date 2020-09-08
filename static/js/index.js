@@ -4,16 +4,20 @@ function Suma() {
 	var x, y;
 	x="5000";
 	y="3000";
-	message = new Paho.MQTT.Message(x+" "+y );
-	console.log(message);
+	message = new Paho.MQTT.Message("S"+" "+ x +" "+ y );
     message.destinationName = "jeffersson.pino@gmail.com/RASP";
     client.send(message);
 	
 }
 function Resta(){	
-	alert("led off");
-	console.log("led off");
-	document.getElementById("sensor").innerHTML="led off";
+	var x, y;
+	x="5000";
+	y="3000";
+	message = new Paho.MQTT.Message("R"+" "+ x +" "+ y );
+	console.log(message);
+    message.destinationName = "jeffersson.pino@gmail.com/RASP";
+    client.send(message);
+	
 }
 
 // Create a client instance

@@ -1,23 +1,26 @@
 //https://www.eclipse.org/paho/clients/js/
 
-function Suma() {
-	var x, y;
-	x="5000";
-	y="3000";
-	message = new Paho.MQTT.Message("S"+" "+ x +" "+ y );
+function Encende1() {
+	message = new Paho.MQTT.Message("L1 on" );
     message.destinationName = "jeffersson.pino@gmail.com/RASP";
     client.send(message);
-	
 }
-function Resta(){	
-	var x, y;
-	x="5000";
-	y="3000";
-	message = new Paho.MQTT.Message("R"+" "+ x +" "+ y );
+function Apaga1() {
+	message = new Paho.MQTT.Message("L1 off" );
     message.destinationName = "jeffersson.pino@gmail.com/RASP";
     client.send(message);
-	
 }
+function Encende2() {
+	message = new Paho.MQTT.Message("L2 on" );
+    message.destinationName = "jeffersson.pino@gmail.com/RASP";
+    client.send(message);
+}
+function Apaga2() {
+	message = new Paho.MQTT.Message("L2 off" );
+    message.destinationName = "jeffersson.pino@gmail.com/RASP";
+    client.send(message);
+}
+
 
 // Create a client instance
   //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);

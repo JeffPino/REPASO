@@ -70,9 +70,11 @@ function Apagar2() {
 	 texto=(message.payloadString);
      text=(message.payloadString).split(" ")[0];
 	 console.log(text)
-	 if (text=="Luz1")
+	 if (text=="Luz1"){
 	  document.getElementById("estado1").innerHTML = texto;
-     if (text=="Luz1")
+	 }
+     else if (text=="Luz2"){
 	  document.getElementById("estado2").innerHTML = texto;
-  }
+	 }
+  
   

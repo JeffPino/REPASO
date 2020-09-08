@@ -2,12 +2,12 @@
 
 function Suma() {
 	var x, y;
-	x=document.getElementById("n1").value;
-	y=document.getElementById("n2").value;
-	//message = new Paho.MQTT.Message(x + y );
+	x="5000";
+	y="3000";
+	message = new Paho.MQTT.Message(x + y );
 	console.log(x);
-    //message.destinationName = "jeffersson.pino@gmail.com/RASP";
-    //client.send(message);
+    message.destinationName = "jeffersson.pino@gmail.com/RASP";
+    client.send(message);
 	
 }
 function Resta(){	

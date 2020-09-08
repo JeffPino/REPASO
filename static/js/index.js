@@ -67,8 +67,8 @@ function Apagar2() {
 
   // called when a message arrives
   function onMessageArrived(message) {
-     text=(message.payloadString);
+     text=(message.payloadString).split(" ")[1];
 	 console.log(text)
-	 document.getElementById("respuesta").innerHTML = text;
+	 document.getElementById("estado1").innerHTML = text;
   }
   

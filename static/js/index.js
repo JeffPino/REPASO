@@ -1,6 +1,7 @@
 //https://www.eclipse.org/paho/clients/js/
 
 function Suma() {
+	var x, y;
 	x=document.getElementById("n1").value;
 	y=document.getElementById("n2").value;
 	//message = new Paho.MQTT.Message(x + y );

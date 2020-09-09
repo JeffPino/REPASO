@@ -1,26 +1,20 @@
 //https://www.eclipse.org/paho/clients/js/
 
-function Encender1() {
-	message = new Paho.MQTT.Message("L1O");
+function Suma() {
+	n1 = document.getElementById("numero1").value;
+	n2 = document.getElementById("numero2").value;
+	console log("S " +n1+" "+n2);
+	message = new Paho.MQTT.Message("S " +n1+" "+n2);
     message.destinationName = "jeffersson.pino@gmail.com/RASP";
     client.send(message);
 }
-function Apagar1() {
-	message = new Paho.MQTT.Message("L1N");
+function Resta() {
+	n1 = document.getElementById("numero1").value;
+	n2 = document.getElementById("numero2").value;
+	console log("S " +n1+" "+n2);
+	message = new Paho.MQTT.Message("R " +n1+" "+n2);
     message.destinationName = "jeffersson.pino@gmail.com/RASP";
     client.send(message);
-}
-function Encender2() {
-	message = new Paho.MQTT.Message("L2O");
-    message.destinationName = "jeffersson.pino@gmail.com/RASP";
-    client.send(message);
-}
-function Apagar2() {
-	message = new Paho.MQTT.Message("L2N");
-    message.destinationName = "jeffersson.pino@gmail.com/RASP";
-    client.send(message);
-}
-
 
 // Create a client instance
   //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
@@ -67,14 +61,17 @@ function Apagar2() {
 
   // called when a message arrives
   function onMessageArrived(message) {
-	 texto=(message.payloadString);
      text=(message.payloadString).split(" ")[0];
+	 Resp=(message.payloadString).split(" ")[1];
 	 console.log(texto)
-	 if (text=="Luz1"){
-	  document.getElementById("estado1").innerHTML = texto;
+	 if (text=="S"){
+	  x="(La respuesta de la suma es:" + Resp);
+	  document.getElementById("estado1").innerHTML = x;
 	 }
-     else if (text=="Luz2"){
-	  document.getElementById("estado2").innerHTML = texto;
+     else if (text=="R"){
+	  document.getElementById("estado1").innerHTML = x;
+	  x="(La respuesta de la resta es:" + Resp);
+
 	 }
   
   

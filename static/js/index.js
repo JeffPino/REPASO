@@ -65,12 +65,12 @@ function Resta() {
 	 Resp=(message.payloadString).split(" ")[1];
 	 console.log(texto)
 	 if (text=="S"){
-	  x="(La respuesta de la suma es:" + Resp);
+	  x=("La respuesta de la suma es:" + Resp);
 	  document.getElementById("estado1").innerHTML = x;
 	 }
      else if (text=="R"){
 	  document.getElementById("estado1").innerHTML = x;
-	  x="(La respuesta de la resta es:" + Resp);
+	  x=("La respuesta de la resta es:" + Resp);
 
 	 }
   

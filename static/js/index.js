@@ -24,7 +24,7 @@
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
 	
-    client.subscribe("jeffersson.pino@gmail.com/WEB");
+    client.subscribe("jeffersson.pino@gmail.com/hora");
     message = new Paho.MQTT.Message("Enlace... OK!");
     message.destinationName = "jeffersson.pino@gmail.com/RASP";
     client.send(message);

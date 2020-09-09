@@ -3,7 +3,7 @@
 function Suma() {
 	n1 = document.getElementById("numero1").value;
 	n2 = document.getElementById("numero2").value;
-	console log("S " +n1+" "+n2);
+	console.log("S " +n1+" "+n2);
 	message = new Paho.MQTT.Message("S " +n1+" "+n2);
     message.destinationName = "jeffersson.pino@gmail.com/RASP";
     client.send(message);
@@ -11,7 +11,7 @@ function Suma() {
 function Resta() {
 	n1 = document.getElementById("numero1").value;
 	n2 = document.getElementById("numero2").value;
-	console log("R " +n1+" "+n2);
+	console.log("R " +n1+" "+n2);
 	message = new Paho.MQTT.Message("R " +n1+" "+n2);
     message.destinationName = "jeffersson.pino@gmail.com/RASP";
     client.send(message);

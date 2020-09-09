@@ -51,5 +51,3 @@
 	 segundos=(message.payloadString).split(":")[1];
 
 	}
-
-  }

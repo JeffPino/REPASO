@@ -1,20 +1,5 @@
 //https://www.eclipse.org/paho/clients/js/
 
-function Suma() {
-	n1 = document.getElementById("numero1").value;
-	n2 = document.getElementById("numero2").value;
-	console.log("S " +n1+" "+n2);
-	message = new Paho.MQTT.Message("S " +n1+" "+n2);
-    message.destinationName = "jeffersson.pino@gmail.com/RASP";
-    client.send(message);
-}
-function Resta() {
-	n1 = document.getElementById("numero1").value;
-	n2 = document.getElementById("numero2").value;
-	console.log("R " +n1+" "+n2);
-	message = new Paho.MQTT.Message("R " +n1+" "+n2);
-    message.destinationName = "jeffersson.pino@gmail.com/RASP";
-    client.send(message);
 }
 // Create a client instance
   //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
@@ -62,16 +47,10 @@ function Resta() {
   // called when a message arrives
   function onMessageArrived(message) {
      console.log(message.payloadString);
-     text=(message.payloadString).split(" ")[0];
-	 Resp=(message.payloadString).split(" ")[1];
-	 console.log(texto)
-	 if (text=="S"){
-	  x=("La respuesta de la suma es:" + Resp);
-	  document.getElementById("estado1").innerHTML = x;
-	 }
-     else if (text=="R"){
-	  document.getElementById("estado1").innerHTML = x;
-	  x=("La respuesta de la resta es:" + Resp);
+     hora=(message.payloadString).split(":")[0];
+	 minutos=(message.payloadString).split(":")[1];
+	 segundos=(message.payloadString).split(":")[1];
+
 	}
 
   }

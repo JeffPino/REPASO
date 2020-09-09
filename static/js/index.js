@@ -61,8 +61,8 @@ function Resta() {
 
   // called when a message arrives
   function onMessageArrived(message) {
-    console.log(message.payloadString);
-     text=(message.payloadString).split(" ")[0];
+     console.log(message.payloadString);
+ /*    text=(message.payloadString).split(" ")[0];
 	 Resp=(message.payloadString).split(" ")[1];
 	 console.log(texto)
 	 if (text=="S"){
@@ -73,5 +73,6 @@ function Resta() {
 	  document.getElementById("estado1").innerHTML = x;
 	  x=("La respuesta de la resta es:" + Resp);
 	}
+ */
 
   }

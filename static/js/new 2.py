@@ -6,19 +6,21 @@ GPIO.setup (18, GPIO.OUT)
 GPIO.setup (27, GPIO.OUT)
 def suma(a,b):
 	x= (int(a)+int(b))
-	mqttc.publish("jeffersson.pino@gmail.com/WEB", "S" + x)
+	print(x)
+	mqttc.publish("jeffersson.pino@gmail.com/WEB", "S " +x)
 	mqttc.publish("jeffersson.pino@gmail.com/WEB", "80")
+
 def resta(a,b):
 	x=(int(a)-int(b))
-	mqttc.publish("jeffersson.pino@gmail.com/WEB", "R" + x)
-	mqttc.publish("jeffersson.pino@gmail.com/WEB", "100")
+	print(x)
+	mqttc.publish("jeffersson.pino@gmail.com/WEB", "R "+ x)
 
 
 def on_message(client, obj, msg): 
 	operacion=(msg.payload.decode("utf-8").split(" ")[0])
 	n1=(msg.payload.decode("utf-8").split(" ")[1])
 	n2=(msg.payload.decode("utf-8").split(" ")[2])
-	print(operacion)
+	print(msg.payload.decode("utf-8"))
 	if operacion=="S":
 		suma(n1,n2)
 	elif operacion=="R":

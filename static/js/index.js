@@ -48,7 +48,7 @@
      console.log(message.payloadString);
      hora=(message.payloadString).split(":")[0];
 	 minutos=(message.payloadString).split(":")[1];
-	 segundos=(message.payloadString).split(":")[1];
+	 segundos=(message.payloadString).split(":")[2];
 	 document.getElementById("Hora").innerHTML=hora;
 	 document.getElementById("Minutos").innerHTML=minutos;
 	 document.getElementById("Segundos").innerHTML=segundos;

@@ -41,7 +41,7 @@ function Resta() {
     console.log("Conectado...");
 	
     client.subscribe("jeffersson.pino@gmail.com/WEB");
-    message = new Paho.MQTT.Message("hola desde la web");
+    message = new Paho.MQTT.Message("Enlace... OK!");
     message.destinationName = "jeffersson.pino@gmail.com/RASP";
     client.send(message);
 	
@@ -61,6 +61,7 @@ function Resta() {
 
   // called when a message arrives
   function onMessageArrived(message) {
+    console.log(message.payloadString);
      text=(message.payloadString).split(" ")[0];
 	 Resp=(message.payloadString).split(" ")[1];
 	 console.log(texto)
@@ -71,9 +72,6 @@ function Resta() {
      else if (text=="R"){
 	  document.getElementById("estado1").innerHTML = x;
 	  x=("La respuesta de la resta es:" + Resp);
+	}
 
-	 }
-  
-  
   }
-  

@@ -5,11 +5,13 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup (18, GPIO.OUT)
 GPIO.setup (27, GPIO.OUT)
 def suma(a,b):
-	x=a+b
-	mqttc.punlish("jeffersson.pino@gmail.com/RASP", "S" + x)
+	x= (int(a)+int(b))
+	mqttc.publish("jeffersson.pino@gmail.com/WEB", "S" + x)
+	mqttc.publish("jeffersson.pino@gmail.com/WEB", "80")
 def resta(a,b):
-	x=a-b
-	mqttc.punlish("jeffersson.pino@gmail.com/RASP", "R" + x)
+	x=(int(a)-int(b))
+	mqttc.publish("jeffersson.pino@gmail.com/WEB", "R" + x)
+	mqttc.publish("jeffersson.pino@gmail.com/WEB", "100")
 
 
 def on_message(client, obj, msg): 

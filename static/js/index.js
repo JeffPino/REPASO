@@ -71,12 +71,14 @@ function setpass(){
 	con=(message.payloadString).split[0];
 	stado1=(message.payloadString).split[1];
 	stado2=(message.payloadString).split[2];
-	if con=="S"
+	if con=="S"{
 		document.getElementById("sensor1").innerHTML=stado1;
 		document.getElementById("sensor2").innerHTML=stado2;
+	
 	else
 		document.getElementById("sensor1").innerHTML="Contraseña incorrecta";
 		document.getElementById("sensor2").innerHTML="Contraseña incorrecta";
 
+  }
   }
   

@@ -7,26 +7,13 @@
 </head>
 <body>
 
-<h1>Embebidos</h1>
-<img src="/static/images/iot.png" alt="user">
-<h1>Sensor:</h><h id="sensor">--</h1>
-<button id = 'LED1On'type="button" onclick="LED1_On();">
-LED1 ON!</button>
-<button id = 'LED1Off' type="button" onclick="LED1_Off();">
-LED1_OFF!</button>
+<h1>Control de sensores</h1>
+<h1>Sensor1:</h><h id="sensor1">--</h1>
+<h1>Sensor2:</h><h id="sensor2">--</h1>
+<input type="text" id="clave">
+<button type="button" onclick="leer();">Leer estado</button>
+<button type="button" onclick="setpass();">Cambiar clave</button>
 
-<script>
 
-function LED1_On() {
-	alert("led on");
-	console.log("led on");
-  
-}
-function LED1_Off(){
-	alert("led off");
-	console.log("led off");
-}
-
-</script>
 </body>
 </html>

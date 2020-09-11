@@ -1,5 +1,27 @@
 //https://www.eclipse.org/paho/clients/js/
 
+function leer() {
+	pass= document.getElementById("clave").value;
+	console.log(pass);
+	message = new Paho.MQTT.Message("V"+pass);
+    message.destinationName = "crisandresveloz@hotmail.com/test1";
+    client.send(message);
+	
+  
+}
+function setpass(){	
+	npass= document.getElementById("clave").value;
+	console.log(pass);
+	message = new Paho.MQTT.Message("C"+pass);
+    message.destinationName = "crisandresveloz@hotmail.com/test1";
+    client.send(message);
+}
+
+
+
+
+
+
 // Create a client instance
   //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
   
@@ -10,8 +32,8 @@
   client.onMessageArrived = onMessageArrived;
   var options = {
    useSSL: false,
-    userName: "jeffersson.pino@gmail.com",
-    password: "Pepino123",
+    userName: "crisandresveloz@hotmail.com",
+    password: "2609931duq",
     onSuccess:onConnect,
     onFailure:doFail
   }
@@ -24,9 +46,9 @@
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
 	
-    client.subscribe("jeffersson.pino@gmail.com/hora");
-    message = new Paho.MQTT.Message("Enlace... OK!");
-    message.destinationName = "jeffersson.pino@gmail.com/RASP";
+    client.subscribe("crisandresveloz@hotmail.com/test");
+    message = new Paho.MQTT.Message("hola desde la web");
+    message.destinationName = "crisandresveloz@hotmail.com/test1";
     client.send(message);
 	
   }
@@ -45,14 +67,16 @@
 
   // called when a message arrives
   function onMessageArrived(message) {
-     console.log(message.payloadString);
-	 actual=(message.payloadString);
-     hora=(message.payloadString).split(":")[0];
-	 minutos=(message.payloadString).split(":")[1];
-	 segundos=(message.payloadString).split(":")[2];
-	 document.getElementById("Actual").innerHTML=actual;
-	 document.getElementById("Hora").innerHTML=hora;
-	 document.getElementById("Minutos").innerHTML=minutos;
-	 document.getElementById("Segundos").innerHTML=segundos;
+    console.log(message.payloadString);
+	con=(message.payloadString).split[0];
+	stado1=(message.payloadString).split[1];
+	stado2=(message.payloadString).split[2];
+	if con='S'
+		document.getElementById("sensor1").innerHTML=stado1;
+		document.getElementById("sensor2").innerHTML=stado2;
+	else
+		document.getElementById("sensor1").innerHTML="Contraseña incorrecta";
+		document.getElementById("sensor2").innerHTML="Contraseña incorrecta";
 
-	}
+  }
+  

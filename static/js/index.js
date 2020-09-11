@@ -74,11 +74,11 @@ function setpass(){
 	if con=="S"{
 		document.getElementById("sensor1").innerHTML=stado1;
 		document.getElementById("sensor2").innerHTML=stado2;
-	
-	else
+	}
+	else{
 		document.getElementById("sensor1").innerHTML="Contraseña incorrecta";
 		document.getElementById("sensor2").innerHTML="Contraseña incorrecta";
-
+	}
   }
-  }
+  
   

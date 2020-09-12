@@ -1,19 +1,18 @@
 //https://www.eclipse.org/paho/clients/js/
 
-function leer() {
-	pass= document.getElementById("clave").value;
-	console.log(pass);
-	message = new Paho.MQTT.Message("V"+pass);
-    message.destinationName = "crisandresveloz@hotmail.com/test1";
+function imprimir() {
+	X=document.getElementById("contra").value;
+	console.log(X)
+	message = new Paho.MQTT.Message("misma" +X);
+    message.destinationName = "cinthyaanabel14@gmail.com/raspberry";
     client.send(message);
-	
   
 }
-function setpass(){	
-	npass= document.getElementById("clave").value;
-	console.log(pass);
-	message = new Paho.MQTT.Message("C"+pass);
-    message.destinationName = "crisandresveloz@hotmail.com/test1";
+function nuevac(){	
+	X=document.getElementById("contra").value;
+	console.log(X)
+	message = new Paho.MQTT.Message("nueva " +X);
+    message.destinationName = "cinthyaanabel14@gmail.com/raspberry";
     client.send(message);
 }
 
@@ -32,8 +31,8 @@ function setpass(){
   client.onMessageArrived = onMessageArrived;
   var options = {
    useSSL: false,
-    userName: "crisandresveloz@hotmail.com",
-    password: "2609931duq",
+    userName: "cinthyaanabel14@gmail.com",
+    password: "embebidos1",
     onSuccess:onConnect,
     onFailure:doFail
   }
@@ -46,9 +45,9 @@ function setpass(){
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
 	
-    client.subscribe("crisandresveloz@hotmail.com/test");
+    client.subscribe("cinthyaanabel14@gmail.com/servidor");
     message = new Paho.MQTT.Message("hola desde la web");
-    message.destinationName = "crisandresveloz@hotmail.com/test1";
+    message.destinationName = "cinthyaanabel14@gmail.com/raspberry";
     client.send(message);
 	
   }
@@ -68,17 +67,5 @@ function setpass(){
   // called when a message arrives
   function onMessageArrived(message) {
     console.log(message.payloadString);
-	con=(message.payloadString).split[0];
-	stado1=(message.payloadString).split[1];
-	stado2=(message.payloadString).split[2];
-	if (con=="S"){
-		document.getElementById("sensor1").innerHTML=stado1;
-		document.getElementById("sensor2").innerHTML=stado2;
-	}
-	else{
-		document.getElementById("sensor1").innerHTML="Contraseña incorrecta";
-		document.getElementById("sensor2").innerHTML="Contraseña incorrecta";
-	}
   }
-  
   

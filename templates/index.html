@@ -3,17 +3,31 @@
 <head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
 <script src="/static/js/index.js"></script>
-<title>EMBEBIDOS</title>
+<title>Examen EMBEBIDOS</title>
 </head>
 <body>
 
-<h1>Control de sensores</h1>
-<h1>Sensor1:</h><h id="sensor1">--</h1>
-<h1>Sensor2:</h><h id="sensor2">--</h1>
-<input type="text" id="clave"></input>
-<button type="button" onclick="leer();">Leer estado</button>
-<button type="button" onclick="setpass();">Cambiar clave</button>
+<h1>Leer el estado de sensores de una casa</h1>
+<h1>Sensor de contacto numero1:</h><h id="s1">--</h1>
+<h1>Sensor de contacto numero2:</h><h id="s">--</h1>
 
+<h1></h1>
+<input type="text"id="contra">
+<button id = 'estados'type="button" onclick="imprimir();">Leer</button>
+<button id = 'nueva' type="button" onclick="nuevac();">Nueva Contraseña</button>
 
+<!--script>
+
+function LED1_On() {
+	alert("led on");
+	console.log("led on");
+  
+}
+function LED1_Off(){
+	alert("led off");
+	console.log("led off");
+}
+
+</script-->
 </body>
 </html>

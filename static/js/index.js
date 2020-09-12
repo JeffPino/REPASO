@@ -3,7 +3,7 @@
 function imprimir() {
 	X=document.getElementById("contra").value;
 	console.log(X)
-	message = new Paho.MQTT.Message("misma" +X);
+	message = new Paho.MQTT.Message(X);
     message.destinationName = "cinthyaanabel14@gmail.com/raspberry";
     client.send(message);
   
@@ -15,11 +15,6 @@ function nuevac(){
     message.destinationName = "cinthyaanabel14@gmail.com/raspberry";
     client.send(message);
 }
-
-
-
-
-
 
 // Create a client instance
   //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);

@@ -63,7 +63,9 @@ function nuevac(){
   function onMessageArrived(message) {
 	sensor=(msg.payload.decode("utf-8")).split(" ")[0]
 	estado=(msg.payload.decode("utf-8")).split(" ")[1]
-	if (estado=="desactivados"){
+	console.log(sensor)
+	console.log(estado)
+/*	if (estado=="desactivados"){
 		document.getElementById("s1").innerHTML="desactivado";
 		document.getElementById("s1").innerHTML="desactivado";
 	}
@@ -73,5 +75,5 @@ function nuevac(){
 	if (sensor=="S2"){
 		document.getElementById("s2").innerHTML=estados;
   }
-  
+  */
   }

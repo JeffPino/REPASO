@@ -61,8 +61,8 @@ function nuevac(){
 
   // called when a message arrives
   function onMessageArrived(message) {
-	sensor=(msg.payload.decode("utf-8")).split(" ")[0]
-	estado=(msg.payload.decode("utf-8")).split(" ")[1]
+	sensor=(msg.payload.decode("utf-8")).split(" ")[0];
+	estado=(msg.payload.decode("utf-8")).split(" ")[1];
 	console.log(sensor)
 	console.log(estado)
 /*	if (estado=="desactivados"){

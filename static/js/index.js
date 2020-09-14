@@ -70,10 +70,10 @@ function nuevac(){
 		document.getElementById("s2").innerHTML=estado;
 	}
 	if (sensor=="S1"){
-		document.getElementById("s1").innerHTML=estados;
+		document.getElementById("s1").innerHTML=estado;
 	}
 	if (sensor=="S2"){
-		document.getElementById("s2").innerHTML=estados;
+		document.getElementById("s2").innerHTML=estado;
   }
 
   }

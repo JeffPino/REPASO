@@ -67,14 +67,3 @@ function nuevac(){
 	console.log(sensor);
 	console.log(estado);
   }
-/*	if (estado=="desactivados"){
-		document.getElementById("s1").innerHTML="desactivado";
-		document.getElementById("s1").innerHTML="desactivado";
-	}
-	if (sensor=="S1"){
-		document.getElementById("s1").innerHTML=estados;
-	}
-	if (sensor=="S2"){
-		document.getElementById("s2").innerHTML=estados;
-  }
-  

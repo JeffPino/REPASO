@@ -3,7 +3,7 @@
 function imprimir() {
 	X=document.getElementById("contra").value;
 	console.log(X)
-	message = new Paho.MQTT.Message(X);
+	message = new Paho.MQTT.Message("m "+X);
     message.destinationName = "cinthyaanabel14@gmail.com/raspberry";
     client.send(message);
   

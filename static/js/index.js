@@ -61,6 +61,18 @@ function nuevac(){
 
   // called when a message arrives
   function onMessageArrived(message) {
-    console.log(message.payloadString);
+	sensor=(msg.payload.decode("utf-8")).split(" ")[0]
+	estado=(msg.payload.decode("utf-8")).split(" ")[1]
+	if (estado=="desactivados"){
+		document.getElementById("s1").innerHTML="desactivado";
+		document.getElementById("s1").innerHTML="desactivado";
+	}
+	else if (sensor=="S2"){
+		document.getElementById("s2").innerHTML=estados;
+	if (sensor=="S1"){
+		document.getElementById("s1").innerHTML=estados;
+	}
+	else if (sensor=="S2"){
+		document.getElementById("s2").innerHTML=estados;
   }
   

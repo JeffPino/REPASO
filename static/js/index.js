@@ -61,14 +61,13 @@ function nuevac(){
 
   // called when a message arrives
   function onMessageArrived(message) {
-    console.log(message.payloadString);
 	sensor=(message.payloadString).split(" ")[0];
 	estado=(message.payloadString).split(" ")[1];
 	console.log(sensor);
 	console.log(estado);
-	if (estado=="desactivados"){
-		document.getElementById("s1").innerHTML="desactivado";
-		document.getElementById("s2").innerHTML="desactivado";
+	if (sensor=="S12"){
+		document.getElementById("s1").innerHTML=estado;
+		document.getElementById("s2").innerHTML=estado;
 	}
 	if (sensor=="S1"){
 		document.getElementById("s1").innerHTML=estados;

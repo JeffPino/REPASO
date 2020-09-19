@@ -20,17 +20,16 @@ def root():
 def index():
 	return render_template("index.html")
 
-
 @app.route("/buscar")
 def buscar():
 	return render_template("buscar.html")
 
 @app.route("/mau")
-def buscar():
+def mau():
 	return render_template("mau.html")
 
 @app.route("/pool")
-def buscar():
+def pool():
 	return render_template("pool.html")
 
 if __name__ == "__main__":

@@ -1,20 +1,3 @@
-//https://www.eclipse.org/paho/clients/js/
-
-function imprimir() {
-	X=document.getElementById("contra").value;
-	console.log(X)
-	message = new Paho.MQTT.Message("m "+X);
-    message.destinationName = "cinthyaanabel14@gmail.com/raspberry";
-    client.send(message);
-  
-}
-function nuevac(){	
-	X=document.getElementById("contra").value;
-	console.log(X)
-	message = new Paho.MQTT.Message("n " +X);
-    message.destinationName = "cinthyaanabel14@gmail.com/raspberry";
-    client.send(message);
-}
 
 // Create a client instance
   //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
@@ -26,8 +9,8 @@ function nuevac(){
   client.onMessageArrived = onMessageArrived;
   var options = {
    useSSL: false,
-    userName: "cinthyaanabel14@gmail.com",
-    password: "embebidos1",
+    userName: "jeffersson.pino@gmail.com",
+    password: "Pepino123",
     onSuccess:onConnect,
     onFailure:doFail
   }
@@ -40,9 +23,9 @@ function nuevac(){
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
 	
-    client.subscribe("cinthyaanabel14@gmail.com/servidor");
-    message = new Paho.MQTT.Message("hola desde la web");
-    message.destinationName = "cinthyaanabel14@gmail.com/raspberry";
+    client.subscribe("jeffersson.pino@gmail.com/hora");
+    message = new Paho.MQTT.Message("Enlace... OK!");
+    message.destinationName = "jeffersson.pino@gmail.com/RASP";
     client.send(message);
 	
   }
@@ -61,19 +44,14 @@ function nuevac(){
 
   // called when a message arrives
   function onMessageArrived(message) {
-	sensor=(message.payloadString).split(" ")[0];
-	estado=(message.payloadString).split(" ")[1];
-	console.log(sensor);
-	console.log(estado);
-	if (sensor=="S12"){
-		document.getElementById("s1").innerHTML=estado;
-		document.getElementById("s2").innerHTML=estado;
-	}
-	if (sensor=="S1"){
-		document.getElementById("s1").innerHTML=estado;
-	}
-	if (sensor=="S2"){
-		document.getElementById("s2").innerHTML=estado;
-  }
+     console.log(message.payloadString);
+	 actual=(message.payloadString);
+     hora=(message.payloadString).split(":")[0];
+	 minutos=(message.payloadString).split(":")[1];
+	 segundos=(message.payloadString).split(":")[2];
+	 document.getElementById("Actual").innerHTML=actual;
+	 document.getElementById("Hora").innerHTML=hora;
+	 document.getElementById("Minutos").innerHTML=minutos;
+	 document.getElementById("Segundos").innerHTML=segundos;
 
-  }
+	}

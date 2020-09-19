@@ -25,6 +25,13 @@ def index():
 def buscar():
 	return render_template("buscar.html")
 
+@app.route("/mau")
+def buscar():
+	return render_template("mau.html")
+
+@app.route("/pool")
+def buscar():
+	return render_template("pool.html")
 
 if __name__ == "__main__":
 	app.run(host='0.0.0.0',port=PORT_NUMBER,debug = True)

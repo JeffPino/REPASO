@@ -1,3 +1,16 @@
+//https://www.eclipse.org/paho/clients/js/
+function On(){
+	message = new Paho.MQTT.Message("E")
+	message.destinationName="jeffersson.pino@gmail.com/Rasp";
+	client.send(message);
+}
+
+function Off() {
+	message = new Paho.MQTT.Message("E")
+	message.destinationName="jeffersson.pino@gmail.com/Rasp";
+	client.send(message);
+  
+}
 
 // Create a client instance
   //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
@@ -23,10 +36,8 @@
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
 	
-    client.subscribe("jeffersson.pino@gmail.com/hora");
-    message = new Paho.MQTT.Message("Enlace... OK!");
-    message.destinationName = "jeffersson.pino@gmail.com/RASP";
-    client.send(message);
+    client.subscribe("jeffersson.pino@gmail.com/WEB");
+
 	
   }
 
@@ -44,14 +55,8 @@
 
   // called when a message arrives
   function onMessageArrived(message) {
-     console.log(message.payloadString);
-	 actual=(message.payloadString);
-     hora=(message.payloadString).split(":")[0];
-	 minutos=(message.payloadString).split(":")[1];
-	 segundos=(message.payloadString).split(":")[2];
-	 document.getElementById("Actual").innerHTML=actual;
-	 document.getElementById("Hora").innerHTML=hora;
-	 document.getElementById("Minutos").innerHTML=minutos;
-	 document.getElementById("Segundos").innerHTML=segundos;
+    console.log(message.payloadString);
+    mentrada=message.payloadString;
+    document.getElementById("led").innerHTML=mentrada;
 
-	}
+
